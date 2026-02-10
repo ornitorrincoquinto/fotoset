@@ -1,0 +1,6 @@
+CREATE DATABASE sistema_fotos;
+USE sistema_fotos;
+CREATE TABLE fotografos(id INT AUTO_INCREMENT PRIMARY KEY,nome VARCHAR(100),email VARCHAR(150),senha VARCHAR(255));
+CREATE TABLE clientes(id INT AUTO_INCREMENT PRIMARY KEY,nome VARCHAR(100),email VARCHAR(150),token VARCHAR(64));
+CREATE TABLE albuns(id INT AUTO_INCREMENT PRIMARY KEY,id_fotografo INT,id_cliente INT,nome_evento VARCHAR(150),limite_fotos INT,valor_extra DECIMAL(10,2),data_expiracao DATE,pago TINYINT DEFAULT 0);
+CREATE TABLE fotos(id INT AUTO_INCREMENT PRIMARY KEY,id_album INT,arquivo VARCHAR(255),selecionada TINYINT DEFAULT 0,extra TINYINT DEFAULT 0);
